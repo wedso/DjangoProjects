@@ -5,4 +5,22 @@
     <h1>About Page</h1>
     <p>This is a template page</p>
 
-{% endblock %}
+<p>
+    {{title | upper | center:"150"}} <br>
+    {{ my_text }} , {{ my_number }} , {{my_list}}
+</p>
+
+<ul>
+    {% for item in my_list %}
+        {% if item == 123 %}
+            <li>{{ forloop.counter }} - {{ item|add:2 }}</li>
+         {% else %}
+            <li>{{forloop.counter }}  -  {{ item}}</li>
+        {% endif %}
+
+
+    {% endfor %}
+
+</ul>
+
+{% endblock  %}
