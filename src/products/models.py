@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls  import reverse
 # Create your models here.
 class Products(models.Model):
     title         = models.CharField(max_length=120)
@@ -9,3 +9,5 @@ class Products(models.Model):
     featured      = models.BooleanField(default=True)
 
 
+    def get_absolute_url(self):
+            return     reverse("product-detail", kwargs={"id": self.id})    # f"/product/{self.id}"

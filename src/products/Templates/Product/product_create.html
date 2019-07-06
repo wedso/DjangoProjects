@@ -4,13 +4,14 @@
 {% block content %}
     <h1>Product Creation Page</h1>
     <p>Please enter new product</p>
-    <form method='POST'>
-        <input type='text' name='title' placeholder="Enter a  title"/>
 
 
+
+    <form action='.' method='POST'> {%csrf_token %}
+        {{ form.as_p}}
         <input type="submit" value='save' />
     </form>
 
 
-    {{object.title}} , {{object.description}} , {{object.price}}
+
 {% endblock %}

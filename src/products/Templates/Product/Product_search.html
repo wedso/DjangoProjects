@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>Product Search Page</h1>
+    <p>Please enter  product name</p>
+
+
+
+    <form method="GET" action="" id="searchform">
+    <input class="searchfield" id="searchbox" name="q" type="text" value="{{ request.GET.q }}" placeholder="Search..."/>
+</form>
+
+
+
+{% endblock %}
